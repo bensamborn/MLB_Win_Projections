@@ -56,7 +56,7 @@ Results were inclusive but the keras_model_testing.py is there to play with for 
 ## Results
 Results are written to the Results/ folder. 
 
-![Win Projections](https://github.com/bensamborn/MLB_Win_Projections/tree/main/Pictures/Wins.png)
+![Win Projections](https://github.com/bensamborn/MLB_Win_Projections/tree/main/Pictures/Wins.PNG)
 
 The results for 2021 lined up closely with Vegas win totals.
 
