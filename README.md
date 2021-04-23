@@ -1,8 +1,18 @@
 # MLB_Win_Projections
  This project was developed to create 2021 MLB Win Projections using python.
  
+ ## Packages Needed
+ ```
+ pip install pandas
+ pip install numpy
+ pip install math
+ pip install matplotlib
+ pip install sklearn
+ pip install keras
+ ```
+
  ## Data
- The data source used to create the projections was Fangraphs. The Data\ folder contains
+ The data source used to create the projections was Fangraphs. The Data/ folder contains
  5 years of historical batting and pitching data as well as 2021 projected team statistics 
  stored in individual Excel Workbooks. Historical team data can be found at the link below:
 
@@ -44,9 +54,9 @@ Testing was also conducted to compare the results of the linear regressions to p
 Results were inclusive but the keras_model_testing.py is there to play with for those that are curious. 
 
 ## Results
-Results are written to the Results\ folder. 
+Results are written to the Results/ folder. 
 
-![Win Projections](Pictures\Wins.png)
+![Win Projections](https://github.com/bensamborn/MLB_Win_Projections/tree/main/Pictures/Wins.png)
 
 The results for 2021 lined up closely with Vegas win totals.
 
