@@ -58,7 +58,7 @@ Results are written to the Results/ folder.
 
 ![Win Projections](/Pictures/Wins.PNG)
 
-The results for 2021 lined up closely with Vegas win totals.
+The results line up closely with 2021 Vegas win totals.
 
 ## Model Improvements
 - Include more batting and pitching metrics in regression
