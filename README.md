@@ -51,14 +51,14 @@ Win % = (Runs Scored)<sup>2</sup> / ((Runs Scored)<sup>2</sup> + (Runs Allowed)<
 
 Testing was also conducted to compare the results of the linear regressions to projections created with a neural net using the Keras API. 
 
-Results were inclusive but the keras_model_testing.py is there to play with for those that are curious. 
+The results between the two models varied slightly, however, the general trend of predicting runs scored and runs allowed linearly to projected WAR was maintaned in both cases. The keras_model_testing.py module contains the neural network used to predict runs scored. 
 
 ## Results
 Results are written to the Results/ folder. 
 
 ![Win Projections](/Pictures/Wins.PNG)
 
-The results line up closely with 2021 Vegas win totals.
+The linear model results line up closely with 2021 Vegas win totals.
 
 ## Model Improvements
 - Include more batting and pitching metrics in regression
@@ -67,7 +67,7 @@ The results line up closely with 2021 Vegas win totals.
     - 5 years also may not provide a sufficient sample size
 - Compare 2021 statistical projection against other sources
     - Or create my own team statistical projections
-- Improve neural net for comparrison of results 
+- Test other model parameters in neural net for comparrison of results 
 
 
 
