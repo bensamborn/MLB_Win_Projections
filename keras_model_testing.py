@@ -31,8 +31,7 @@ xscaler = scaler_x.transform(hist_batting)
 print(scaler_y.fit(hist_rs))
 yscaler = scaler_y.transform(hist_rs)
 
-train_hit_in, test_hit_in = train_test_split(xscaler, test_size=0.2)
-train_hit_out, test_hit_out = train_test_split(yscaler, test_size=0.2)
+train_hit_in, test_hit_in, train_hit_out, test_hit_out = train_test_split(xscaler, yscaler, test_size=0.2)
 
 #define model
 model = Sequential()
@@ -42,38 +41,17 @@ model.add(Dense(1, activation='linear'))
 model.summary()
 
 model.compile(loss='mse', optimizer='adam', metrics=['mse','mae'])
-#model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 history = model.fit(train_hit_in, train_hit_out, epochs=150, batch_size=50,  verbose=1, validation_split=0.2)
 score = model.evaluate(test_hit_in, test_hit_out, verbose=100)
 
 print('Test loss:', round(score[0], 3))
 print('Test accuracy:', round(score[1], 3))
 
-# # plot "Loss"
-# plt.plot(history.history['loss'])
-# plt.plot(history.history['val_loss'])
-# plt.title('Model Loss')
-# plt.ylabel('Loss')
-# plt.xlabel('Epoch')
-# plt.legend(['Train', 'Validation'], loc='upper left')
-# plt.show()
-
 #Predict
-#Xnew = np.array([[40, 0, 26, 9000, 8000]])
 Xnew= scaler_x.transform(proj_batting)
 ynew= model.predict(Xnew)
 #invert normalize
 ynew = scaler_y.inverse_transform(ynew) 
 Xnew = scaler_x.inverse_transform(Xnew)
-#print("X=%s, Predicted=%s" % (Xnew[0], ynew[0]))
 out_batting['Proj Runs'] = pd.Series(ynew[:,0])
 out_batting.to_excel('Results/Keras_Batting.xlsx')
-
-# #output to excel
-# # Create a Pandas Excel writer using XlsxWriter as the engine.
-# writer = pd.ExcelWriter('Results\Raw_Linear_Results.xlsx')
-
-# out_batting.to_excel(writer, sheet_name='BATTING')
-# out_pitching.to_excel(writer, sheet_name='PITCHING')
-
-# writer.save()
