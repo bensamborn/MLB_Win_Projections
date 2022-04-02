@@ -58,7 +58,7 @@ Results are written to the Results/ folder.
 
 ![Win Projections](/Pictures/Neural_Net_Projections_2022.PNG)
 
-The linear model results line up closely with 2022 Vegas win totals.
+The results from the neural net line up closely with 2022 Vegas win totals.
 
 ## Model Improvements
 - Include more batting and pitching metrics in regression
