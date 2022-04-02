@@ -29,7 +29,7 @@ out_pitching['RA'] = runs_against
 
 #output to excel
 # Create a Pandas Excel writer using XlsxWriter as the engine.
-writer = pd.ExcelWriter('Results\Raw_Linear_Results.xlsx')
+writer = pd.ExcelWriter('Results\Raw_Linear_Results_2022.xlsx')
 
 out_batting.to_excel(writer, sheet_name='BATTING')
 out_pitching.to_excel(writer, sheet_name='PITCHING')
